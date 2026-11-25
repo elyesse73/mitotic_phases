@@ -14,7 +14,7 @@ Training deep classifiers with standard **hard one-hot labels** on discordant an
 
 This repository implements a reproducible PyTorch pipeline replacing hard targets with **bimodal probabilistic Soft Labels** derived directly from expert votes:
 * **Consensus cases (Group A):** one-hot target ($y_i = 1.0$).
-* **Disagreement cases (Group B):** bimodal target ($y_i = 0.5,\; y_j = 0.5$).
+* **Disagreement cases (Group B):** bimodal target ($y_i = 0.5, y_j = 0.5$).
 
 > **Team Collaboration Note:** The broader CBIO study was conducted collaboratively by A. Louis and E. Benyeloul under the supervision of T. Walter, L. Monnier, R. Bourgade, and G. Balezo. Multi-scanner UMAP domain-shift diagnostics and multi-center Macenko preprocessing were developed collaboratively within the CBIO team; this repository packages the **probabilistic Soft Labeling framework, deterministic GPU training pipeline, Double Coverage Accuracy (DCA) evaluation, confidence calibration, and Grad-CAM++ attribution analysis**.
 
@@ -37,7 +37,9 @@ Comparison of a `ConvNeXt-Tiny` backbone trained with **Hard Labels (Expert 1)**
 
 Standard Top-2 accuracy only verifies whether *one* ground-truth class appears in the top 2 predictions. For disagreement samples where Expert 1 and Expert 2 assign distinct labels $y_{E1} \neq y_{E2}$, we define **Double Coverage Accuracy** to verify whether the unordered set of the model's top-2 predictions matches *both* experts exactly:
 
-$$\mathrm{DCA} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{1}\!\left(\left\{y_{E1}^{(i)},\, y_{E2}^{(i)}\right\} = \left\{\hat{y}_{1}^{(i)},\, \hat{y}_{2}^{(i)}\right\}\right)$$
+```math
+\mathrm{DCA} = \frac{1}{N} \sum_{i=1}^{N} \mathbf{1}\left(\lbrace y_{E1}^{(i)}, y_{E2}^{(i)} \rbrace = \lbrace \hat{y}_{1}^{(i)}, \hat{y}_{2}^{(i)} \rbrace\right)
+```
 
 ---
 
