@@ -57,7 +57,7 @@ By removing gradient conflicts from contradictory hard annotations, soft supervi
 
 | Hard-Label Baseline (Scattered Attention) | Proposed Soft Labels (Chromatin Focus) |
 | :---: | :---: |
-| ![Hard-Label Grad-CAM++ Sample 122](assets/gradcam_hard_122.jpg) | ![Soft-Label Grad-CAM++ Sample 122](assets/gradcam_soft_122.png) |
+| ![Hard-Label Grad-CAM++ Sample 122](assets/gradcam_hard_122.png) | ![Soft-Label Grad-CAM++ Sample 122](assets/gradcam_soft_122.png) |
 
 ---
 
