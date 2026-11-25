@@ -1,0 +1,34 @@
+experiment:
+  seed: 45
+  deterministic: true
+  device: "auto"
+  output_dir: "outputs"
+
+data:
+  csv_path: "data/AMI-BR.csv"
+  patches_dir: "data/patches/normal"
+  mode: "NMF"            # "NMF" (Normal) or "AMF" (Atypical)
+  label_mode: "soft"     # "soft" (bimodal expert votes) or "hard" (Expert 1)
+  min_class_count: 10
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  batch_size: 16
+  num_workers: 2
+  use_sampler: true
+  use_macenko: false
+  macenko_prob: 0.5
+  macenko_num_refs: 5
+  macenko_ref_paths: []
+
+model:
+  architecture: "convnext_tiny"  # "convnext_tiny" | "convnext_small" | "convnext_base"
+  pretrained: true
+  train_mode: "full"             # "full" | "fine_tune" | "feature_extraction"
+
+training:
+  epochs: 50
+  learning_rate: 1.0e-4
+  weight_decay: 0.1
+  bounded_acc_low_threshold: 0.25
+  bounded_acc_high_threshold: 0.75

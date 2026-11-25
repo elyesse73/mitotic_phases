@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data, checkpoints & run outputs (never version raw medical data or weights)
+data/images/
+data/patches/
+data/*.csv
+data/*.zip
+outputs/
+*.pth
+*.pt
+*.ckpt
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
