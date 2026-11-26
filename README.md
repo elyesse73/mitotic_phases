@@ -124,7 +124,7 @@ Grad-CAM++ overlays provide qualitative insight into spatial focus. On cases suc
 Using [`uv`](https://docs.astral.sh/uv/) (recommended):
 
 ```bash
-git clone [https://github.com/elyesse73/mitotic_phases.git](https://github.com/elyesse73/mitotic_phases.git)
+git clone https://github.com/elyesse73/mitotic_phases.git
 cd mitotic_phases
 
 # Core package + dev tools (pytest, ruff, mypy)
